@@ -16,7 +16,6 @@ pub fn gear_ratios_part_one<P: AsRef<Path>>(path: P) {
     let re = Regex::new(r"\d+").unwrap();
     for line in &lines {
         let matches = re.find_iter(&line);
-        // iterate over each match
         for m in matches {
             let num = &line[m.start()..m.end()];
             let x = m.start() as usize;
