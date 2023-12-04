@@ -2,7 +2,8 @@ mod utils;
 mod y2023;
 
 fn main() {
-   gear_ratios();
+    scratchcards();
+    gear_ratios();
     cube_conundrum();
     trebuchet();
 }
@@ -26,4 +27,11 @@ fn gear_ratios() {
     y2023::d03::gear_ratios::gear_ratios_part_one("src/y2023/d03/input.txt");
     y2023::d03::gear_ratios::gear_ratios_part_two("src/y2023/d03/example.txt");
     y2023::d03::gear_ratios::gear_ratios_part_two("src/y2023/d03/input.txt");
+}
+
+fn scratchcards() {
+    y2023::d04::scratchcards::scratchcards_part_one("src/y2023/d04/example.txt");
+    y2023::d04::scratchcards::scratchcards_part_one("src/y2023/d04/input.txt");
+    y2023::d04::scratchcards::scratchcards_part_two("src/y2023/d04/example.txt");
+    y2023::d04::scratchcards::scratchcards_part_two("src/y2023/d04/input.txt");
 }
