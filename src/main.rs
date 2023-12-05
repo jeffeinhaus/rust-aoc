@@ -2,6 +2,7 @@ mod utils;
 mod y2023;
 
 fn main() {
+    fertilizer();
     scratchcards();
     gear_ratios();
     cube_conundrum();
@@ -34,4 +35,11 @@ fn scratchcards() {
     y2023::d04::scratchcards::scratchcards_part_one("src/y2023/d04/input.txt");
     y2023::d04::scratchcards::scratchcards_part_two("src/y2023/d04/example.txt");
     y2023::d04::scratchcards::scratchcards_part_two("src/y2023/d04/input.txt");
+}
+
+fn fertilizer() {
+    y2023::d05::fertilizer::fertilizer_part_one("src/y2023/d05/example.txt");
+    y2023::d05::fertilizer::fertilizer_part_one("src/y2023/d05/input.txt");
+    y2023::d05::fertilizer::fertilizer_part_two("src/y2023/d05/example.txt");
+    // y2023::d05::fertilizer::fertilizer_part_two("src/y2023/d05/input.txt");
 }
