@@ -1,7 +1,9 @@
+use std::vec;
 mod utils;
 mod y2023;
 
 fn main() {
+    wait_for_it();
     fertilizer();
     scratchcards();
     gear_ratios();
@@ -42,4 +44,11 @@ fn fertilizer() {
     y2023::d05::fertilizer::fertilizer_part_one("src/y2023/d05/input.txt");
     y2023::d05::fertilizer::fertilizer_part_two("src/y2023/d05/example.txt");
     // y2023::d05::fertilizer::fertilizer_part_two("src/y2023/d05/input.txt");
+}
+
+fn wait_for_it() {
+    y2023::d06::wait_for_it::wait_for_it(vec![7, 15, 30], vec![9, 40, 200]);
+    y2023::d06::wait_for_it::wait_for_it(vec![56, 71, 79, 99], vec![334, 1135, 1350, 2430]);
+    y2023::d06::wait_for_it::wait_for_it(vec![71530], vec![940200]);
+    y2023::d06::wait_for_it::wait_for_it(vec![56717999], vec![334113513502430]);
 }
