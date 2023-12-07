@@ -3,6 +3,7 @@ mod utils;
 mod y2023;
 
 fn main() {
+    camel_cards();
     wait_for_it();
     fertilizer();
     scratchcards();
@@ -51,4 +52,11 @@ fn wait_for_it() {
     y2023::d06::wait_for_it::wait_for_it(vec![56, 71, 79, 99], vec![334, 1135, 1350, 2430]);
     y2023::d06::wait_for_it::wait_for_it(vec![71530], vec![940200]);
     y2023::d06::wait_for_it::wait_for_it(vec![56717999], vec![334113513502430]);
+}
+
+fn camel_cards() {
+    y2023::d07::camel_cards::camel_cards_part_one("src/y2023/d07/example.txt");
+    y2023::d07::camel_cards::camel_cards_part_one("src/y2023/d07/input.txt");
+    y2023::d07::camel_cards::camel_cards_part_two("src/y2023/d07/example.txt");
+    y2023::d07::camel_cards::camel_cards_part_two("src/y2023/d07/input.txt");
 }
