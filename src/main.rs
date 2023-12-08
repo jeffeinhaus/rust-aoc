@@ -3,6 +3,7 @@ mod utils;
 mod y2023;
 
 fn main() {
+    haunted_wasteland();
     camel_cards();
     wait_for_it();
     fertilizer();
@@ -59,4 +60,12 @@ fn camel_cards() {
     y2023::d07::camel_cards::camel_cards_part_one("src/y2023/d07/input.txt");
     y2023::d07::camel_cards::camel_cards_part_two("src/y2023/d07/example.txt");
     y2023::d07::camel_cards::camel_cards_part_two("src/y2023/d07/input.txt");
+}
+
+fn haunted_wasteland() {
+    y2023::d08::haunted_wasteland::haunted_wasteland_part_one("src/y2023/d08/example_01.txt");
+    y2023::d08::haunted_wasteland::haunted_wasteland_part_one("src/y2023/d08/example_02.txt");
+    y2023::d08::haunted_wasteland::haunted_wasteland_part_one("src/y2023/d08/input.txt");
+    y2023::d08::haunted_wasteland::haunted_wasteland_part_two("src/y2023/d08/example_03.txt");
+    y2023::d08::haunted_wasteland::haunted_wasteland_part_two("src/y2023/d08/input.txt");
 }
