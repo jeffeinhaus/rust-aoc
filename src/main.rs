@@ -3,6 +3,7 @@ mod utils;
 mod y2023;
 
 fn main() {
+    mirage_maintenance();
     haunted_wasteland();
     camel_cards();
     wait_for_it();
@@ -68,4 +69,11 @@ fn haunted_wasteland() {
     y2023::d08::haunted_wasteland::haunted_wasteland_part_one("src/y2023/d08/input.txt");
     y2023::d08::haunted_wasteland::haunted_wasteland_part_two("src/y2023/d08/example_03.txt");
     y2023::d08::haunted_wasteland::haunted_wasteland_part_two("src/y2023/d08/input.txt");
+}
+
+fn mirage_maintenance() {
+    y2023::d09::mirage_maintenance::mirage_maintenance_part_one("src/y2023/d09/example.txt");
+    y2023::d09::mirage_maintenance::mirage_maintenance_part_one("src/y2023/d09/input.txt");
+    y2023::d09::mirage_maintenance::mirage_maintenance_part_two("src/y2023/d09/example.txt");
+    y2023::d09::mirage_maintenance::mirage_maintenance_part_two("src/y2023/d09/input.txt");
 }
