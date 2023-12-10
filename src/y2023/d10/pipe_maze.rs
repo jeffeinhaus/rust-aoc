@@ -86,7 +86,7 @@ pub fn pipe_maze_part_two<P: AsRef<Path>>(path: P) {
                     break;
                 }
             }
-            if (!found) {
+            if !found {
                 print!(" ");
             }
         }
