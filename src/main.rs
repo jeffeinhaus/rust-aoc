@@ -3,15 +3,16 @@ mod utils;
 mod y2023;
 
 fn main() {
-    mirage_maintenance();
-    haunted_wasteland();
-    camel_cards();
-    wait_for_it();
-    fertilizer();
-    scratchcards();
-    gear_ratios();
-    cube_conundrum();
-    trebuchet();
+    pipe_maze();
+    // mirage_maintenance();
+    // haunted_wasteland();
+    // camel_cards();
+    // wait_for_it();
+    // fertilizer();
+    // scratchcards();
+    // gear_ratios();
+    // cube_conundrum();
+    // trebuchet();
 }
 
 fn trebuchet() {
@@ -76,4 +77,11 @@ fn mirage_maintenance() {
     y2023::d09::mirage_maintenance::mirage_maintenance_part_one("src/y2023/d09/input.txt");
     y2023::d09::mirage_maintenance::mirage_maintenance_part_two("src/y2023/d09/example.txt");
     y2023::d09::mirage_maintenance::mirage_maintenance_part_two("src/y2023/d09/input.txt");
+}
+
+fn pipe_maze() {
+    // y2023::d10::pipe_maze::pipe_maze_part_one("src/y2023/d10/example_01.txt");
+    // y2023::d10::pipe_maze::pipe_maze_part_one("src/y2023/d10/example_02.txt");
+    // y2023::d10::pipe_maze::pipe_maze_part_one("src/y2023/d10/input.txt");
+    y2023::d10::pipe_maze::pipe_maze_part_two("src/y2023/d10/input.txt");
 }
