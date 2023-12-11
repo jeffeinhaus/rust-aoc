@@ -3,6 +3,7 @@ mod utils;
 mod y2023;
 
 fn main() {
+    cosmic_expansion();
     pipe_maze();
     mirage_maintenance();
     haunted_wasteland();
@@ -84,4 +85,12 @@ fn pipe_maze() {
     y2023::d10::pipe_maze::pipe_maze_part_one("src/y2023/d10/example_02.txt");
     y2023::d10::pipe_maze::pipe_maze_part_one("src/y2023/d10/input.txt");
     y2023::d10::pipe_maze::pipe_maze_part_two("src/y2023/d10/input.txt");
+}
+
+fn cosmic_expansion() {
+    y2023::d11::cosmic_expansion::cosmic_expansion("src/y2023/d11/example.txt", 1);
+    // y2023::d11::cosmic_expansion::cosmic_expansion("src/y2023/d11/input.txt", 1);
+    y2023::d11::cosmic_expansion::cosmic_expansion("src/y2023/d11/example.txt", 9);
+    y2023::d11::cosmic_expansion::cosmic_expansion("src/y2023/d11/example.txt", 99);
+    // y2023::d11::cosmic_expansion::cosmic_expansion("src/y2023/d11/input.txt", 999_999);
 }
