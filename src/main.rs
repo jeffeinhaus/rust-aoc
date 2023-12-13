@@ -3,6 +3,8 @@ mod utils;
 mod y2023;
 
 fn main() {
+    point_of_incidence();
+    // hot_springs();
     cosmic_expansion();
     pipe_maze();
     mirage_maintenance();
@@ -93,4 +95,18 @@ fn cosmic_expansion() {
     y2023::d11::cosmic_expansion::cosmic_expansion("src/y2023/d11/example.txt", 9);
     y2023::d11::cosmic_expansion::cosmic_expansion("src/y2023/d11/example.txt", 99);
     // y2023::d11::cosmic_expansion::cosmic_expansion("src/y2023/d11/input.txt", 999_999);
+}
+
+fn hot_springs() {
+    y2023::d12::hot_springs::hot_springs_part_one("src/y2023/d12/example.txt");
+    // y2023::d12::hot_springs::hot_springs_part_one("src/y2023/d12/input.txt");
+    y2023::d12::hot_springs::hot_springs_part_two("src/y2023/d12/example.txt");
+    // y2023::d12::hot_springs::hot_springs_part_two("src/y2023/d12/input.txt");
+}
+
+fn point_of_incidence() {
+    y2023::d13::point_of_incidence::point_of_incidence_part_one("src/y2023/d13/example.txt");
+    y2023::d13::point_of_incidence::point_of_incidence_part_one("src/y2023/d13/input.txt");
+    y2023::d13::point_of_incidence::point_of_incidence_part_two("src/y2023/d13/example.txt");
+    y2023::d13::point_of_incidence::point_of_incidence_part_two("src/y2023/d13/input.txt");
 }
