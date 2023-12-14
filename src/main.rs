@@ -1,10 +1,12 @@
 use std::vec;
+
 mod utils;
 mod y2023;
 
 fn main() {
+    parabolic_reflector_dish();
     point_of_incidence();
-    // hot_springs();
+    hot_springs();
     cosmic_expansion();
     pipe_maze();
     mirage_maintenance();
@@ -100,7 +102,7 @@ fn cosmic_expansion() {
 fn hot_springs() {
     y2023::d12::hot_springs::hot_springs_part_one("src/y2023/d12/example.txt");
     // y2023::d12::hot_springs::hot_springs_part_one("src/y2023/d12/input.txt");
-    y2023::d12::hot_springs::hot_springs_part_two("src/y2023/d12/example.txt");
+    // y2023::d12::hot_springs::hot_springs_part_two("src/y2023/d12/example.txt");
     // y2023::d12::hot_springs::hot_springs_part_two("src/y2023/d12/input.txt");
 }
 
@@ -109,4 +111,11 @@ fn point_of_incidence() {
     y2023::d13::point_of_incidence::point_of_incidence_part_one("src/y2023/d13/input.txt");
     y2023::d13::point_of_incidence::point_of_incidence_part_two("src/y2023/d13/example.txt");
     y2023::d13::point_of_incidence::point_of_incidence_part_two("src/y2023/d13/input.txt");
+}
+
+fn parabolic_reflector_dish() {
+    y2023::d14::parabolic_reflector_dish::parabolic_reflector_dish_part_one("src/y2023/d14/example.txt");
+    y2023::d14::parabolic_reflector_dish::parabolic_reflector_dish_part_one("src/y2023/d14/input.txt");
+    y2023::d14::parabolic_reflector_dish::parabolic_reflector_dish_part_two("src/y2023/d14/example.txt");
+    y2023::d14::parabolic_reflector_dish::parabolic_reflector_dish_part_two("src/y2023/d14/input.txt");
 }
