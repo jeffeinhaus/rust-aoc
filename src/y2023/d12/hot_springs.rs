@@ -1,30 +1,14 @@
 use crate::utils;
 use std::path::Path;
-use regex::Regex;
+use std::collections::HashMap;
 
 pub fn hot_springs_part_one<P: AsRef<Path>>(path: P) {
     let lines = utils::read_file_line_by_line(path).unwrap();
-    let re = Regex::new(r"#+").unwrap();
-    let mut sum: i32 = 0;
+    let mut sum = 0;
     for record in lines {
         let row = record.split(" ").collect::<Vec<&str>>();
-        let permutations = record_permutations_recursive(&row[0]);
         let groupings = row[1].split(",").map(|x| x.parse::<usize>().unwrap()).collect::<Vec<usize>>();
-        for permutation in permutations {
-            let matches = re.find_iter(&permutation).collect::<Vec<_>>();
-            if groupings.len() == matches.len() {
-                let mut valid = true;
-                for (i, mat) in matches.iter().enumerate() {
-                    if groupings[i] != mat.len() {
-                        valid = false;
-                        break;
-                    }
-                }
-                if valid {
-                    sum += 1;
-                }
-            }
-        }
+        sum += count_permutations(&row[0], &groupings, 0, 0, 0, &mut HashMap::new());
     }
     
     println!("Hot springs part one: {}", sum);
@@ -32,66 +16,50 @@ pub fn hot_springs_part_one<P: AsRef<Path>>(path: P) {
 
 pub fn hot_springs_part_two<P: AsRef<Path>>(path: P) {
     let lines = utils::read_file_line_by_line(path).unwrap();
-    let re = Regex::new(r"#+").unwrap();
-    let mut sum: i32 = 0;
-    let mut count = 0;
+    let mut sum = 0;
     for record in lines {
-        dbg!(&count);
         let row = record.split(" ").collect::<Vec<&str>>();
-        let springs = String::from(row[0]);
-        let mut new_row = String::from(row[0]);
+        let mut expanded_row = String::from(row[0]);
         for _ in 0..4 {
-            new_row.push('?');
-            new_row.push_str(&springs);
+            expanded_row.push_str("?");
+            expanded_row.push_str(&row[0]);
         }
-        let permutations = record_permutations_recursive(&new_row);
-        let mut groupings = row[1].split(",").map(|x| x.parse::<usize>().unwrap()).collect::<Vec<usize>>();
-        let original = groupings.clone();
+        let groupings = row[1].split(",").map(|x| x.parse::<usize>().unwrap()).collect::<Vec<usize>>();
+        let mut expanded_groupings = groupings.clone();
         for _ in 0..4 {
-            groupings.extend(&original);
+            expanded_groupings.append(&mut groupings.clone());
         }
-        for permutation in permutations {
-            let matches = re.find_iter(&permutation).collect::<Vec<_>>();
-            if groupings.len() == matches.len() {
-                let mut valid = true;
-                for (i, mat) in matches.iter().enumerate() {
-                    if groupings[i] != mat.len() {
-                        valid = false;
-                        break;
-                    }
-                }
-                if valid {
-                    sum += 1;
-                }
-            }
-        }
-        count += 1;
+        sum += count_permutations(&expanded_row, &expanded_groupings, 0, 0, 0, &mut HashMap::new());
     }
     
     println!("Hot springs part two: {}", sum);
 }
 
-fn record_permutations_recursive(row: &str) -> Vec<String> {
-    if row.is_empty() {
-        return vec![String::new()];
+fn count_permutations(s: &str, pattern: &Vec<usize>, idx: usize, pat_idx: usize, curr_len: usize, memo: &mut HashMap<(usize, usize, usize), usize>) -> usize {
+    if memo.contains_key(&(idx, pat_idx, curr_len)) {
+        return memo[&(idx, pat_idx, curr_len)];
     }
-
-    let mut permutations = Vec::new();
-    let first_char = row.chars().next().unwrap();
-    let rest_of_row = &row[1..];
-
-    let sub_permutations = record_permutations_recursive(rest_of_row);
-
-    if first_char == '?' {
-        for permutation in sub_permutations {
-            permutations.push(format!("#{}", permutation));
-            permutations.push(format!(".{}", permutation));
-        }
-    } else {
-        for permutation in sub_permutations {
-            permutations.push(format!("{}{}", first_char, permutation));
+    if idx == s.len() {
+        if pat_idx == pattern.len() && curr_len == 0 {
+            return 1;
+        } else if pat_idx == pattern.len()-1 && pattern[pat_idx] == curr_len {
+            return 1;
+        } else {
+            return 0;
         }
     }
-
-    permutations
+    let mut result = 0;
+    for c in ['.', '#'] {
+        if s[idx..].starts_with(c) || s[idx..].starts_with('?') {
+            if c == '.' && curr_len == 0 {
+                result += count_permutations(s, pattern, idx + 1, pat_idx, 0, memo);
+            } else if c =='.' && curr_len > 0 && pat_idx < pattern.len() && pattern[pat_idx] == curr_len {
+                result += count_permutations(s, pattern, idx + 1, pat_idx + 1, 0, memo);
+            } else if c == '#' {
+                result += count_permutations(s, pattern, idx + 1, pat_idx, curr_len + 1, memo);
+            }
+        } 
+    }
+    memo.insert((idx, pat_idx, curr_len), result);
+    result
 }

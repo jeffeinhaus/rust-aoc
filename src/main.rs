@@ -4,6 +4,7 @@ mod utils;
 mod y2023;
 
 fn main() {
+    lens_library();
     parabolic_reflector_dish();
     point_of_incidence();
     hot_springs();
@@ -101,9 +102,9 @@ fn cosmic_expansion() {
 
 fn hot_springs() {
     y2023::d12::hot_springs::hot_springs_part_one("src/y2023/d12/example.txt");
-    // y2023::d12::hot_springs::hot_springs_part_one("src/y2023/d12/input.txt");
-    // y2023::d12::hot_springs::hot_springs_part_two("src/y2023/d12/example.txt");
-    // y2023::d12::hot_springs::hot_springs_part_two("src/y2023/d12/input.txt");
+    y2023::d12::hot_springs::hot_springs_part_one("src/y2023/d12/input.txt");
+    y2023::d12::hot_springs::hot_springs_part_two("src/y2023/d12/example.txt");
+    y2023::d12::hot_springs::hot_springs_part_two("src/y2023/d12/input.txt");
 }
 
 fn point_of_incidence() {
@@ -118,4 +119,11 @@ fn parabolic_reflector_dish() {
     y2023::d14::parabolic_reflector_dish::parabolic_reflector_dish_part_one("src/y2023/d14/input.txt");
     y2023::d14::parabolic_reflector_dish::parabolic_reflector_dish_part_two("src/y2023/d14/example.txt");
     y2023::d14::parabolic_reflector_dish::parabolic_reflector_dish_part_two("src/y2023/d14/input.txt");
+}
+
+fn lens_library() {
+    y2023::d15::lens_library::lens_library_part_one("src/y2023/d15/example.txt");
+    y2023::d15::lens_library::lens_library_part_one("src/y2023/d15/input.txt");
+    y2023::d15::lens_library::lens_library_part_two("src/y2023/d15/example.txt");
+    y2023::d15::lens_library::lens_library_part_two("src/y2023/d15/input.txt");
 }
