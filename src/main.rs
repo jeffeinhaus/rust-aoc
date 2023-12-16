@@ -4,6 +4,7 @@ mod utils;
 mod y2023;
 
 fn main() {
+    floor_is_lava();
     lens_library();
     parabolic_reflector_dish();
     point_of_incidence();
@@ -126,4 +127,11 @@ fn lens_library() {
     y2023::d15::lens_library::lens_library_part_one("src/y2023/d15/input.txt");
     y2023::d15::lens_library::lens_library_part_two("src/y2023/d15/example.txt");
     y2023::d15::lens_library::lens_library_part_two("src/y2023/d15/input.txt");
+}
+
+fn floor_is_lava() {
+    y2023::d16::floor_is_lava::floor_is_lava_part_one("src/y2023/d16/example.txt");
+    // y2023::d16::floor_is_lava::floor_is_lava_part_one("src/y2023/d16/input.txt");
+    y2023::d16::floor_is_lava::floor_is_lava_part_two("src/y2023/d16/example.txt");
+    // y2023::d16::floor_is_lava::floor_is_lava_part_two("src/y2023/d16/input.txt");
 }
