@@ -4,6 +4,7 @@ mod utils;
 mod y2023;
 
 fn main() {
+    clumsy_crucible();
     floor_is_lava();
     lens_library();
     parabolic_reflector_dish();
@@ -134,4 +135,11 @@ fn floor_is_lava() {
     // y2023::d16::floor_is_lava::floor_is_lava_part_one("src/y2023/d16/input.txt");
     y2023::d16::floor_is_lava::floor_is_lava_part_two("src/y2023/d16/example.txt");
     // y2023::d16::floor_is_lava::floor_is_lava_part_two("src/y2023/d16/input.txt");
+}
+
+fn clumsy_crucible() {
+    y2023::d17::clumsy_crucible::clumsy_crucible_part_one("src/y2023/d17/example.txt");
+    y2023::d17::clumsy_crucible::clumsy_crucible_part_one("src/y2023/d17/input.txt");
+    y2023::d17::clumsy_crucible::clumsy_crucible_part_two("src/y2023/d17/example.txt");
+    y2023::d17::clumsy_crucible::clumsy_crucible_part_two("src/y2023/d17/input.txt");
 }
