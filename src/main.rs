@@ -4,6 +4,14 @@ mod utils;
 mod y2023;
 
 fn main() {
+    snowverload();
+    never_tell_me_the_odds();
+    long_walk();
+    sand_slabs();
+    step_counter();
+    pulse_propagation();
+    aplenty();
+    lavaduct_lagoon();
     clumsy_crucible();
     floor_is_lava();
     lens_library();
@@ -142,4 +150,58 @@ fn clumsy_crucible() {
     y2023::d17::clumsy_crucible::clumsy_crucible_part_one("src/y2023/d17/input.txt");
     y2023::d17::clumsy_crucible::clumsy_crucible_part_two("src/y2023/d17/example.txt");
     y2023::d17::clumsy_crucible::clumsy_crucible_part_two("src/y2023/d17/input.txt");
+}
+
+fn lavaduct_lagoon() {
+    y2023::d18::lavaduct_lagoon::lavaduct_lagoon_part_one("src/y2023/d18/example.txt");
+    y2023::d18::lavaduct_lagoon::lavaduct_lagoon_part_one("src/y2023/d18/input.txt");
+    y2023::d18::lavaduct_lagoon::lavaduct_lagoon_part_two("src/y2023/d18/example.txt");
+    y2023::d18::lavaduct_lagoon::lavaduct_lagoon_part_two("src/y2023/d18/input.txt");
+}
+
+fn aplenty() {
+    y2023::d19::aplenty::aplenty_part_one("src/y2023/d19/example.txt");
+    y2023::d19::aplenty::aplenty_part_one("src/y2023/d19/input.txt");
+    y2023::d19::aplenty::aplenty_part_two("src/y2023/d19/example.txt");
+    y2023::d19::aplenty::aplenty_part_two("src/y2023/d19/input.txt");
+}
+
+fn pulse_propagation() {
+    y2023::d20::pulse_propagation::pulse_propagation_part_one("src/y2023/d20/example_01.txt");
+    y2023::d20::pulse_propagation::pulse_propagation_part_one("src/y2023/d20/example_02.txt");
+    y2023::d20::pulse_propagation::pulse_propagation_part_one("src/y2023/d20/input.txt");
+    y2023::d20::pulse_propagation::pulse_propagation_part_two("src/y2023/d20/input.txt");
+}
+
+fn step_counter() {
+    y2023::d21::step_counter::step_counter_part_one("src/y2023/d21/example.txt", 6);
+    y2023::d21::step_counter::step_counter_part_one("src/y2023/d21/input.txt", 64);
+    y2023::d21::step_counter::step_counter_part_two("src/y2023/d21/example.txt", 100);
+    // y2023::d21::step_counter::step_counter_part_two("src/y2023/d21/input.txt", 26501365);
+}
+
+fn sand_slabs() {
+    y2023::d22::sand_slabs::sand_slabs_part_one("src/y2023/d22/example.txt");
+    // y2023::d22::sand_slabs::sand_slabs_part_one("src/y2023/d22/input.txt");
+    y2023::d22::sand_slabs::sand_slabs_part_two("src/y2023/d22/example.txt");
+    // y2023::d22::sand_slabs::sand_slabs_part_two("src/y2023/d22/input.txt");
+}
+
+fn long_walk() {
+    y2023::d23::long_walk::long_walk_part_one("src/y2023/d23/example.txt");
+    // y2023::d23::long_walk::long_walk_part_one("src/y2023/d23/input.txt");
+    y2023::d23::long_walk::long_walk_part_two("src/y2023/d23/example.txt");
+    // y2023::d23::long_walk::long_walk_part_two("src/y2023/d23/input.txt");
+}
+
+fn never_tell_me_the_odds() {
+    y2023::d24::never_tell_me_the_odds::never_tell_me_the_odds_part_one("src/y2023/d24/example.txt", 7, 27);
+    y2023::d24::never_tell_me_the_odds::never_tell_me_the_odds_part_one("src/y2023/d24/input.txt", 200_000_000_000_000, 400_000_000_000_000);
+    y2023::d24::never_tell_me_the_odds::never_tell_me_the_odds_part_two("src/y2023/d24/example.txt");
+    // y2023::d24::never_tell_me_the_odds::never_tell_me_the_odds_part_two("src/y2023/d24/input.txt");
+}
+
+fn snowverload() {
+    y2023::d25::snowverload::snowverload_part_one("src/y2023/d25/example.txt");
+    y2023::d25::snowverload::snowverload_part_one("src/y2023/d25/input.txt");
 }
